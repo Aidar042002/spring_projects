@@ -1,0 +1,14 @@
+header{
+    height: 20vh;
+}
+
+.page-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.padding-minus{
+    margin-top: -200px;
+}
