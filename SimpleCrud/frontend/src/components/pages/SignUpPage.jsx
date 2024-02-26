@@ -41,15 +41,15 @@ export default function SignUpPage(){
                 <h1 className="h3 mb-3 fw-normal">Please sign up</h1>
 
                 <div className="form-floating">
-                    <input type="text" className="form-control" id="floatingUsername" placeholder="Username" onChange={fill}/>
+                    <input type="text" className="form-control" id="username" name="username" placeholder="Username" onChange={fill}/>
                     <label htmlFor="floatingUsername">Username</label>
                 </div>
                 <div className="form-floating">
-                    <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={fill}/>
+                    <input type="email" className="form-control" id="email" name="email" placeholder="name@example.com" onChange={fill}/>
                     <label htmlFor="floatingInput">Email address</label>
                 </div>
                 <div className="form-floating">
-                    <input type="password" className="form-control" id="floatingPassword" placeholder="Password" onChange={fill}/>
+                    <input type="password" className="form-control" id="password" name="password" placeholder="Password" onChange={fill}/>
                     <label htmlFor="floatingPassword">Password</label>
                 </div>
 

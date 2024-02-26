@@ -40,11 +40,11 @@ export default function SingInPage(){
                     <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
                     <div className="form-floating">
-                        <input type="text" className="form-control" id="floatingInput" placeholder="Username" onChange={fill}/>
+                        <input type="text" className="form-control" id="username" name="username" placeholder="Username" onChange={fill}/>
                             <label htmlFor="floatingInput">Enter username</label>
                     </div>
                     <div className="form-floating">
-                        <input type="password" className="form-control" id="floatingPassword" placeholder="Password" onChange={fill}/>
+                        <input type="password" className="form-control" id="password" name="password" placeholder="Password" onChange={fill}/>
                             <label htmlFor="floatingPassword">Password</label>
                     </div>
 

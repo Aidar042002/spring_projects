@@ -3,17 +3,19 @@ import{useState, useEffect} from "react";
 import {useNavigate} from "react-router";
 
 export default function Navbar(){
-    const [auth, setAuth]=useState(null);
+    const [auth, setAuth]=useState(localStorage.getItem('token'));
     const navigate = useNavigate();
 
     useEffect(()=>{
+        console.log(localStorage.getItem("token"));
         setAuth(localStorage.getItem("token"));
-    }, [])
+    }, [localStorage.getItem('token')])
 
     const handleExit=()=>{
         localStorage.removeItem("token");
         navigate('/');
     }
+
 
     return(
         <nav className="navbar navbar-expand navbar-dark bg-dark">
