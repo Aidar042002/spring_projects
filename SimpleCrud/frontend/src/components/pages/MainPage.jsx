@@ -31,6 +31,9 @@ export default function MainPage(){
                     <p>Signed up user:{userName}</p>:
                     <p>UNAUTH</p>
             }
+            <div className="hello-text">
+                Главная страница
+            </div>
         </div>
     )
 }

@@ -41,6 +41,12 @@ export default function Navbar(){
                                 <a className="nav-link" href="/" onClick={handleExit}>Exit</a>
                                 </li> :null
                         }
+                        {
+                            auth !== null?
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/tasks">Tasks</a>
+                                </li> :null
+                        }
                     </ul>
                 </div>
             </div>

@@ -12,3 +12,24 @@ header{
 .padding-minus{
     margin-top: -200px;
 }
+
+.hello-text{
+    border:1px solid black;
+    text-align: center;
+    padding: 50px;
+}
+.tasks-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #dddddd;
+}
+
+.tasks-table th, .tasks-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tasks-table th {
+    background-color: #f2f2f2;
+}

@@ -11,6 +11,7 @@ export default function SignUpPage(){
     const navigate = useNavigate();
 
     async function handle(e) {
+        e.preventDefault();
         const res = await fetch("http://localhost:8080/auth/signup", {
             method: "post",
             body: JSON.stringify(state),
@@ -19,7 +20,6 @@ export default function SignUpPage(){
             }
         });
         if (res.ok) {
-            alert("success sign up");
             navigate("/signin");
         } else {
             const errorMessage = await res.text();

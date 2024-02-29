@@ -65,7 +65,7 @@ public class SecurityConfigurator {
                 )
                 .authorizeHttpRequests(authorize ->authorize
                         .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers("/secured/user").fullyAuthenticated()
+                        .requestMatchers("/secured/**").fullyAuthenticated()
                         .anyRequest().permitAll()
                 )
                 .addFilterBefore(
