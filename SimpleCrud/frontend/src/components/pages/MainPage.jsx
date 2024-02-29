@@ -33,6 +33,8 @@ export default function MainPage(){
             }
             <div className="hello-text">
                 Главная страница
+                <br/>
+                <a href="/tasks">Перейти к задачам</a>
             </div>
         </div>
     )

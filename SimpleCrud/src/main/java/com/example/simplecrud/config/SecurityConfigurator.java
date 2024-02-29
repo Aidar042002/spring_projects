@@ -20,6 +20,8 @@ import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 
+import java.util.Arrays;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfigurator {
@@ -53,10 +55,17 @@ public class SecurityConfigurator {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .cors(httpSecurityCorsConfigurer ->
-                        httpSecurityCorsConfigurer.configurationSource(
-                                request -> new CorsConfiguration().applyPermitDefaultValues())
-                )
+//                .cors(httpSecurityCorsConfigurer ->
+//                        httpSecurityCorsConfigurer.configurationSource(
+//                                request -> new CorsConfiguration().applyPermitDefaultValues())
+//                )
+                .cors(httpSecurityCorsConfigurer -> httpSecurityCorsConfigurer.configurationSource(request -> {
+                    CorsConfiguration corsConfig = new CorsConfiguration();
+                    corsConfig.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+                    corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
+                    corsConfig.setAllowedHeaders(Arrays.asList("*"));
+                    return corsConfig;
+                }))
                 .exceptionHandling(exceptions ->exceptions
                         .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
                 )
